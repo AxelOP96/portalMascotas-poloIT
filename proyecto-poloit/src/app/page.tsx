@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import WelcomeSection from "./components/WelcomeSection";
 import AdoptionRequirements from "./components/AdoptionRequirements";
 export default function Home() {
@@ -41,8 +43,8 @@ export default function Home() {
       </main>
         <WelcomeSection />
         <AdoptionRequirements />
-      <footer className="fixed bottom-0 w-full h-[100px] bg-[#3fc5ad] rounded-t-[100px] z-50" />
-      
+      {/* <footer className="fixed bottom-0 w-full h-[100px] bg-[#3fc5ad] rounded-t-[100px] z-50" /> */}
+      <Footer />
       
     </div>
   );
