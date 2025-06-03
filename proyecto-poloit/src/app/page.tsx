@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import WelcomeSection from "./components/WelcomeSection";
+import AdoptionRequirements from "./components/AdoptionRequirements";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans relative overflow-hidden pb-[100px]">
@@ -39,6 +40,7 @@ export default function Home() {
         </div>
       </main>
         <WelcomeSection />
+        <AdoptionRequirements />
       <footer className="fixed bottom-0 w-full h-[100px] bg-[#3fc5ad] rounded-t-[100px] z-50" />
       
       
