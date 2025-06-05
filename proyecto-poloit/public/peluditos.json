@@ -1,0 +1,50 @@
+[
+  {
+    "id": "apolo",
+    "nombre": "Apolo",
+    "edad": "8 años",
+    "barrio": "Caballito",
+    "descripcion": "Cariñoso",
+    "imagen": "/perritos/apolo.png"
+  },
+  {
+    "id": "dana",
+    "nombre": "Dana",
+    "edad": "3 años",
+    "barrio": "Palermo",
+    "descripcion": "Amistosa",
+    "imagen": "/perritos/dana.png"
+  },
+  {
+    "id": "pili",
+    "nombre": "Pili",
+    "edad": "5 meses",
+    "barrio": "Monserrat",
+    "descripcion": "Tierno",
+    "imagen": "/perritos/pili.png"
+  },
+  {
+    "id": "misi",
+    "nombre": "Misi",
+    "edad": "3 años",
+    "barrio": "Caballito",
+    "descripcion": "Jugueton",
+    "imagen": "/perritos/misi.png"
+  },
+  {
+    "id": "tati",
+    "nombre": "Tati",
+    "edad": "3 años",
+    "barrio": "Caballito",
+    "descripcion": "Dulce",
+    "imagen": "/perritos/tati.png"
+  },
+  {
+    "id": "titu",
+    "nombre": "Titu",
+    "edad": "3 años",
+    "barrio": "Caballito",
+    "descripcion": "Cariñosa",
+    "imagen": "/perritos/titu.png"
+  }
+]
