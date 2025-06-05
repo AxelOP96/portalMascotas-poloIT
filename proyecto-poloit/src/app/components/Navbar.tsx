@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
 import HeaderCurve from "./HeaderCurve";
+//import PeluditosPage from "../peluditos/page";
 
 export default function Navbar() {
     return (
@@ -18,7 +19,7 @@ export default function Navbar() {
                 </Link>
 
                 <nav className={styles.nav}>
-                    <Link href="#peluditos" className={styles.navLink}>
+                    <Link href="/peluditos" className={styles.navLink}>
                         Ver Peluditos
                     </Link>
                     <Link href="#donaciones" className={styles.navLink}>
