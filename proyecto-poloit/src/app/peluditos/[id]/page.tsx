@@ -1,11 +1,22 @@
-import { useRouter } from "next/router";
-import peluditos from "./peluditos.json";
+"use client"
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+//import peluditos from "@/app/data/peluditos.json";
 import Image from "next/image";
 
 export default function DetallePeludito() {
-  const router = useRouter();
-  const { id } = router.query;
-  const peludito = peluditos.find((p) => p.id === id);
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+  const [peludito, setPeludito] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/peluditos.json")
+      .then(res => res.json())
+      .then(data => {
+        const encontrado = data.find((p: any) => p.id === id);
+        setPeludito(encontrado);
+      });
+  }, [id]);
 
   if (!peludito) return <p>Cargando...</p>;
 
