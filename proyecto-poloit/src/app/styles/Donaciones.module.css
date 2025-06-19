@@ -1,0 +1,48 @@
+.container {
+    position: relative; 
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    padding-bottom: 40px;
+}
+
+.bannerImage {
+    margin-bottom: -231px;
+    max-width: 100%;
+    height: auto;
+    display: inline;
+}
+
+.texto {
+    background: #fff;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 850px;
+    box-shadow: 0px 14px 9.4px 0px #FFBFA352;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.mediosPago {
+}
+
+.pagosImage {
+    max-width: 100%;
+    height: auto;
+    display: inline;
+}
+
+/* HUELLAS DECORATIVAS */
+.huellasLeft {
+    position: absolute;
+    top: 200px;
+    left: 42px;
+}
+
+.huellasRight {
+    position: absolute;
+    bottom: 100px;
+    right: 70px;
+}

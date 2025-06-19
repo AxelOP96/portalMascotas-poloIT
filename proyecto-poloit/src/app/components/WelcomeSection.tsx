@@ -27,7 +27,7 @@ export default function WelcomeSection() {
 
       <div className="flex justify-center items-center mb-8">
         <Image
-          src="/Logo Animalitos.png" // usá la imagen del corazón
+          src="/Logo Animalitos.png" 
           alt="Ilustración perro y gato"
           width={180}
           height={180}
@@ -41,9 +41,9 @@ export default function WelcomeSection() {
       {/* Perrito a la derecha */}
       <div className="absolute bottom-0 right-[10%] hidden md:block">
         <Image
-          src="/perro.png" // tu imagen del perro
+          src="/perro.png" 
           alt="Perrito"
-          width={180}
+          width={350}
           height={180}
         />
       </div>
