@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-//import peluditos from "@/app/data/peluditos.json";
 import Image from "next/image";
 
 export default function DetallePeludito() {
@@ -10,7 +9,7 @@ export default function DetallePeludito() {
   const [peludito, setPeludito] = useState<any>(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/peluditos")
+    fetch("http://localhost:5000/peluditos")
       .then(res => res.json())
       .then(data => {
         const encontrado = data.find((p: any) => p.id === id);

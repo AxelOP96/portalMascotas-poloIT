@@ -29,6 +29,12 @@ export default function Navbar() {
                     <Link href="/donaciones" className={styles.navLink}>
                         Donaciones
                     </Link>
+                    <button
+                        className={styles.navLink}
+                        onClick={() => setShowRegister(true)}
+                        >
+                        Registrarse
+                    </button>
                 </nav>
 
                 {/* Curva de olas */}
