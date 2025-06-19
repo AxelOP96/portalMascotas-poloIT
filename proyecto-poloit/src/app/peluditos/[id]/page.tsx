@@ -10,7 +10,7 @@ export default function DetallePeludito() {
   const [peludito, setPeludito] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/peluditos.json")
+    fetch("http://localhost:5000/api/peluditos")
       .then(res => res.json())
       .then(data => {
         const encontrado = data.find((p: any) => p.id === id);

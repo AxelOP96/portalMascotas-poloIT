@@ -16,7 +16,12 @@ export default function AdoptionRequirements() {
         {/* Columna izquierda */}
         <div className="flex flex-col items-center max-w-md text-center">
           <Image src="/family.png" alt="Familia feliz" width={300} height={300} />
-          <button className="bg-lime-400 hover:bg-lime-500 text-black font-bold px-6 py-3 rounded-full mt-6 uppercase transition-all">
+          <button onClick={() =>
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfZz3t2xvbtRPhO3Mz4MtWD2-ti9gTJJEYfAAtTvJ-Qc7jDBA/viewform",
+      "_blank"
+    )
+  }  className="bg-lime-400 hover:bg-lime-500 text-black font-bold px-6 py-3 rounded-full mt-6 uppercase transition-all">
             Completa el formulario
           </button>
           <p className="mt-4 text-sm text-gray-700 max-w-sm">

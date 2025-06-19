@@ -39,7 +39,7 @@ export default function RegisterModal() {
         className="bg-white p-6 rounded-3xl shadow-xl text-left relative w-[90%] max-w-md"
       >
         <img
-          src="/gatoperro.png"
+          src="/imgregistro.png"
           alt="Mascotas"
           className="w-full h-40 object-contain -mt-16"
         />
