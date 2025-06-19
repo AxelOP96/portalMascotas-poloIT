@@ -91,7 +91,7 @@ export default function PeluditosPage() {
                             <span>📍 {p.barrio}</span>
                             <span>🤍 {p.personalidad}</span>
                         </div>
-                        <Link href={`/peluditos/${p._id}`}>
+                        <Link href={`/ver-peluditos/${p._id}`}>
                             <button className="conocer-btn">CONOCER 🐾</button>
                         </Link>
                     </div>

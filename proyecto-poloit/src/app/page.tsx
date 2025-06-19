@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WelcomeSection from "./components/WelcomeSection";
-import PeluditosPage from "./peluditos/page";
 import AdoptionRequirements from "./components/AdoptionRequirements";
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans relative overflow-hidden pb-[100px]">
