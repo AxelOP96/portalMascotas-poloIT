@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
@@ -15,23 +16,17 @@ export default function Navbar() {
                     <Image
                         src="/mihogar-logo-mini.png"
                         alt="MiHogar Logo"
-                        width={320}
+                        width={200}
                         height={40}
                         className={styles.logo}
                     />
                 </Link>
 
                 <nav className={styles.nav}>
-                    <Link href="/peluditos" className={styles.navLink}>
+                    <Link href="/ver-peluditos" className={styles.navLink}>
                         Ver Peluditos
                     </Link>
-                    <button
-                        className={styles.navLink}
-                        onClick={() => setShowRegister(true)}
-                        >
-                        Registrarse
-                        </button>
-                    <Link href="#donaciones" className={styles.navLink}>
+                    <Link href="/donaciones" className={styles.navLink}>
                         Donaciones
                     </Link>
                 </nav>
