@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import "./../styles/PeluditosPage.css";
 
 const peluditos = [
     {
+        id: "apolo",
         nombre: "APOLO",
         edad: "8 años",
         barrio: "Caballito",
@@ -10,6 +12,7 @@ const peluditos = [
         img: "/assets/1.jpg"
     },
     {
+        id: "dana",
         nombre: "DANA",
         edad: "3 años",
         barrio: "Palermo",
@@ -17,6 +20,7 @@ const peluditos = [
         img: "/assets/2.jpg"
     },
     {
+        id: "kira",
         nombre: "KIRA",
         edad: "5 meses",
         barrio: "Monserrat",
@@ -24,6 +28,7 @@ const peluditos = [
         img: "/assets/3.jpg"
     },
     {
+        id: "pichon",
         nombre: "PICHON",
         edad: "3 años",
         barrio: "Caballito",
@@ -31,6 +36,7 @@ const peluditos = [
         img: "/assets/4.jpg"
     },
     {
+        id: "tati",
         nombre: "TATI",
         edad: "2 años",
         barrio: "Caballito",
@@ -38,10 +44,11 @@ const peluditos = [
         img: "/assets/5.jpg"
     },
     {
+        id: "sasha",
         nombre: "SASHA",
         edad: "3 años",
         barrio: "Caballito",
-        personalidad: "Cariñoso",
+        personalidad: "Cariñosa",
         img: "/assets/6.jpg"
     }
 ];
@@ -58,8 +65,8 @@ export default function PeluditosPage() {
             </div>
 
             <div className="peluditos-container">
-                {peluditos.map((p, i) => (
-                    <div key={i} className="peludito-card">
+                {peluditos.map((p) => (
+                    <div key={p.id} className="peludito-card">
                         <Image src={p.img} alt={p.nombre} width={300} height={200} className="peludito-img" />
                         <h3>{p.nombre}</h3>
                         <div className="peludito-info">
@@ -67,7 +74,9 @@ export default function PeluditosPage() {
                             <span>📍 {p.barrio}</span>
                             <span>🤍 {p.personalidad}</span>
                         </div>
-                        <button className="conocer-btn">CONOCER 🐾</button>
+                        <Link href={`/peluditos/${p.id}`}>
+                            <button className="conocer-btn">CONOCER 🐾</button>
+                        </Link>
                     </div>
                 ))}
             </div>
