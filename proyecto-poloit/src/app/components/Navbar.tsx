@@ -5,10 +5,15 @@ import styles from "../styles/Navbar.module.css";
 import HeaderCurve from "./HeaderCurve";
 import { useState } from "react";
 import RegisterModal from "./RegisterModal";
-//import PeluditosPage from "../peluditos/page";
 
 export default function Navbar() {
     const [showRegister, setShowRegister] = useState(false);
+    const [menuAbierto, setMenuAbierto] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuAbierto(!menuAbierto);
+    };
+
     return (
         <>
             <header className={styles.header}>
@@ -22,7 +27,13 @@ export default function Navbar() {
                     />
                 </Link>
 
-                <nav className={styles.nav}>
+                <button className={styles.burger} onClick={toggleMenu}>
+                    ☰
+                </button>
+
+                <nav
+                    className={`${styles.nav} ${menuAbierto ? styles.showMenu : ""}`}
+                >
                     <Link href="/ver-peluditos" className={styles.navLink}>
                         Ver Peluditos
                     </Link>
@@ -31,11 +42,11 @@ export default function Navbar() {
                     </Link>
                 </nav>
 
-                {/* Curva de olas */}
                 <div className={styles.waveWrapper}>
                     <HeaderCurve />
                 </div>
             </header>
+
             {showRegister && <RegisterModal />}
         </>
     );

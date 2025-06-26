@@ -26,27 +26,29 @@ export default function Home() {
           alt="Logo MiHogar"
           width={800}
           height={200}
-          className="z-10"
+          className="z-10 w-[80%] max-w-[400px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px]"
         />
 
-        <div className="absolute top-[80px] left-[10px] opacity-180">
-        <Image src="/huellas-left.png" alt="Huellas izquierda" width={160} height={60} />
-        </div>
-        <div className="absolute bottom-[80px] right-[10px] opacity-180">
-        <Image src="/huellas-right.png" alt="Huellas izquierda" width={160} height={60} />
 
+        <div className="hidden lg:block absolute top-[80px] left-[10px]">
+          <Image src="/huellas-left.png" width={160} height={60} alt="Huellas izquierda" />
         </div>
+
+        <div className="hidden lg:block absolute bottom-[80px] right-[10px]">
+          <Image src="/huellas-right.png" width={160} height={60} alt="Huellas derecha" />
+        </div>
+
         <div className="w-full overflow-hidden leading-none -mb-[1px]">
           <svg viewBox="0 0 1440 120" className="w-full h-[80px]" preserveAspectRatio="none">
             <path fill="#ffffff" d="M0,0 C360,100 1080,0 1440,100 L1440,120 L0,120 Z"></path>
           </svg>
         </div>
       </main>
-        <WelcomeSection />
-        <AdoptionRequirements />
+      <WelcomeSection />
+      <AdoptionRequirements />
       {/* <footer className="fixed bottom-0 w-full h-[100px] bg-[#3fc5ad] rounded-t-[100px] z-50" /> */}
       <Footer />
-      
+
     </div>
   );
 }
