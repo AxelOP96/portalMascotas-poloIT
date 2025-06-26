@@ -7,7 +7,7 @@ const router = express.Router();
 
 const JWT_SECRET = process.env.JWT_SECRET || "claveultrasecreta";
 router.post('/register', async (req, res) => {
-  const { nombre, apellido, telefono, email, password } = req.body;
+  const { nombre, apellido, telefono, email, password, role } = req.body;
 
   const existing = await User.findOne({ email });
   if (existing) return res.status(400).json({ msg: "El usuario ya existe" });
@@ -20,13 +20,14 @@ router.post('/register', async (req, res) => {
     telefono,
     email,
     password: hashedPassword,
+    role
   });
 
   await newUser.save();
 
   const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: "1d" });
 
-  res.json({ token, user: { id: newUser._id, nombre, email } });
+  res.json({ token, user: { id: newUser._id, nombre, email, role } });
 });
 
 module.exports = router;
@@ -52,3 +53,10 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
+
+const verifyToken = require("../middleware/verifyToken");
+
+router.get("/me", verifyToken, (req, res) => {
+  const { nombre, apellido, email, role } = req.user;
+  res.json({ nombre, apellido, email, role });
+});

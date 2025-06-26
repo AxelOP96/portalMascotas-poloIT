@@ -1,19 +1,20 @@
 "use client";
 
 import { useState } from "react";
-
-export default function RegisterModal() {
+import LoginModal from "./LoginModal";
+export default function RegisterModal({ onClose }: { onClose: () => void }) {
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
     telefono: "",
     email: "",
     password: "",
+    role: "adoptante",
   });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+const [showLogin, setShowLogin] = useState(false);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,11 +28,12 @@ export default function RegisterModal() {
     const data = await res.json();
     if (res.ok) {
       alert("¡Registro exitoso!");
+      setShowLogin(true); 
     } else {
       alert(data.msg || "Error al registrarse");
     }
   };
-
+  if (showLogin) return <LoginModal onClose={onClose} />;
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <form
@@ -39,7 +41,7 @@ export default function RegisterModal() {
         className="bg-white p-6 rounded-3xl shadow-xl text-left relative w-[90%] max-w-md"
       >
         <img
-          src="/gatoperro.png"
+          src="/imgregistro.png"
           alt="Mascotas"
           className="w-full h-40 object-contain -mt-16"
         />
@@ -49,6 +51,18 @@ export default function RegisterModal() {
           <Input name="telefono" label="Teléfono" value={formData.telefono} onChange={handleChange} />
           <Input name="email" label="E-Mail" value={formData.email} onChange={handleChange} />
           <Input name="password" label="Contraseña" value={formData.password} onChange={handleChange} type="password" />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm font-semibold">Tipo de usuario:</label>
+          <select
+            name="role"
+            value={formData.role || "adoptante"}
+            onChange={handleChange}
+            className="border-b border-gray-400 focus:outline-none focus:border-lime-400 py-1"
+          >
+            <option value="adoptante">Adoptante</option>
+            <option value="postulante">Postulante (puede cargar mascotas)</option>
+          </select>
         </div>
         <button
           type="submit"

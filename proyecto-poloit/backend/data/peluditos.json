@@ -3,42 +3,84 @@
     "nombre": "Apolo",
     "edad": "8 años",
     "barrio": "Caballito",
-    "descripcion": "Cariñoso",
-    "imagen": "/perritos/apolo.png"
+    "personalidad":"Amoroso",
+    "descripcion": "Este perrito aunque ya ha vivido varios años, su energía sigue siendo vibrante, y su cariño no tiene límites. Se lleva bien con todos. Su mirada cálida y su actitud tranquila lo convierten en el perro ideal para quienes buscan un amigo fiel y cariñoso.",
+    "imagen": "/perritos/apolo.png",
+    "peso": "Aproximadamente 18-25 kg",
+    "estatura":"Aprox. 45 cm a la cruz.",
+    "estadoSalud":"Se encuentra en buen estado de salud general, con todas sus vacunas al día. Se recomienda mantener un control veterinario regular. Está listo para llenar tu hogar de amor y momentos especiales.",
+    "sexo":"Macho",
+    "raza": "Cruce entre Beagle y Boxer",
+    "etapaDeVida": "Perrito adulto"
   },
   {
     "nombre": "Dana",
     "edad": "3 años",
     "barrio": "Palermo",
-    "descripcion": "Amistosa",
-    "imagen": "/perritos/dana.png"
+    "personalidad": "Leal y amistosa",
+    "descripcion": "Este perrito aunque ya ha vivido varios años, su energía sigue siendo vibrante, y su cariño no tiene límites. Se lleva bien con todos. Su mirada cálida y su actitud tranquila lo convierten en el perro ideal para quienes buscan un amigo fiel y cariñoso.",
+    "imagen": "/perritos/dana.png",
+    "peso": "Aproximadamente 25-29 kg",
+    "estatura":"Aprox. 53 y 56 cm.",
+    "estadoSalud":"esta perrita tiene displasia de cadera. Es importante mantener un control con el veterinario asegurarse de que se mantenga activa.",
+    "sexo":"Hembra",
+    "raza": "Golden Retriever",
+    "etapaDeVida": "Perrito adulta"
   },
   {
     "nombre": "Pili",
-    "edad": "5 meses",
+    "edad": "3 semanas",
     "barrio": "Monserrat",
-    "descripcion": "Tierno",
-    "imagen": "/perritos/pili.png"
+    "personalidad":"Amoroso",
+    "descripcion": "Su mirada cálida y su actitud tranquila lo convierten en el perro ideal para quienes buscan una amiga fiel y cariñoso.",
+    "imagen": "/perritos/pili.png",
+    "peso": "Aproximadamente 500 gramos",
+    "estatura":"Aprox. 20 cm a la altura.",
+    "estadoSalud":"Necesita cuidados constantes, como la alimentación de la madre o fórmula adecuada. Su sistema inmune aún está en desarrollo, por lo que es vulnerable a enfermedades si no se cuida bien",
+    "sexo":"Hembra",
+    "raza": "Labrador Retriever",
+    "etapaDeVida": "Perrito cachorro"
   },
   {
     "nombre": "Misi",
-    "edad": "3 años",
+    "edad": "2 años",
     "barrio": "Caballito",
-    "descripcion": "Jugueton",
-    "imagen": "/perritos/misi.png"
+    "personalidad":"Temeroso",
+    "descripcion": "Se muestra temeroso y reservado debido a la experiencia traumática de ser encontrado bajo la lluvia, lo que le causó hipotermia. Su comportamiento desconfiado es una reacción normal al estrés y al miedo, especialmente después de haber estado expuesto a condiciones adversas.",
+    "imagen": "/perritos/misi.png",
+    "peso": "Aproximadamente 3.5 kg",
+    "estatura":"Aprox. 23 cm.",
+    "estadoSalud":"estuvo expuesto al frío y la humedad, puede haber riesgo de resfriados, hipotermia o problemas respiratorios.",
+    "sexo":"Macho",
+    "raza": "Domestico Atigrado",
+    "etapaDeVida": "Gato adulto"
   },
   {
     "nombre": "Tati",
-    "edad": "3 años",
+    "edad": "8 años",
     "barrio": "Caballito",
-    "descripcion": "Dulce",
-    "imagen": "/perritos/tati.png"
+    "personalidad":"Tierno",
+    "descripcion": "Este GATITO aunque ya ha vivido varios años, su energía sigue siendo vibrante, y su cariño no tiene límites. Se lleva bien con todos. Su mirada cálida y su actitud tranquila lo convierten en el gato ideal para quienes buscan un amigo fiel y cariñoso.",
+    "imagen": "/perritos/tati.png",
+    "peso": "Aproximadamente 4 kg",
+    "estatura":"Aprox. 45 cm.",
+    "estadoSalud":"Se encuentra en buen estado de salud general, con todas sus vacunas al día. Se recomienda mantener un control veterinario regular.",
+    "sexo":"Macho",
+    "raza": "Atigrado",
+    "etapaDeVida": "Gato adulto"
   },
   {
     "nombre": "Titu",
-    "edad": "3 años",
+    "edad": "1 año",
     "barrio": "Caballito",
-    "descripcion": "Cariñosa",
-    "imagen": "/perritos/titu.png"
+    "personalidad":"Amoroso",
+    "descripcion": "Este gatito , es muy cariñoso no tiene límites. Se lleva bien con todos. Su mirada cálida y su actitud tranquila lo convierten en un gatito ideal para quienes buscan un amigo fiel y cariñoso.",
+    "imagen": "/perritos/titu.png",
+    "peso": "Aproximadamente 3 kg",
+    "estatura":"Aprox. 20 cm.",
+    "estadoSalud":"Se encuentra en buen estado de salud general, con todas sus vacunas al día. Se recomienda mantener un control veterinario regular.",
+    "sexo":"Macho",
+    "raza": "Atigrado",
+    "etapaDeVida": "Gatito joven"
   }
 ]
