@@ -53,3 +53,10 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
+
+const verifyToken = require("../middleware/verifyToken");
+
+router.get("/me", verifyToken, (req, res) => {
+  const { nombre, apellido, email, role } = req.user;
+  res.json({ nombre, apellido, email, role });
+});
