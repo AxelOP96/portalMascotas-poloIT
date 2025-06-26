@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 export default function LoginModal({ onClose }: { onClose: () => void }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
-
+    const router = useRouter();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -21,6 +21,11 @@ export default function LoginModal({ onClose }: { onClose: () => void }) {
     if (res.ok) {
       localStorage.setItem("token", data.token);
       alert("¡Sesión iniciada correctamente!");
+      if (data.user.role === "postulante") {
+        router.push("/postulante");
+      } else {
+        router.push("/ver-peluditos");
+      }
       onClose();
       location.reload(); // o usar router.push si querés redirigir
     } else {
