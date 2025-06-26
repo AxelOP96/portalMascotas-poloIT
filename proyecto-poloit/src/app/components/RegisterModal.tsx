@@ -33,7 +33,7 @@ const [showLogin, setShowLogin] = useState(false);
       alert(data.msg || "Error al registrarse");
     }
   };
-  if (showLogin) return <LoginModal onClose={onClose} />;
+  if (showLogin) return <LoginModal onClose={() => setShowLogin(false)} />;
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <form
@@ -70,6 +70,16 @@ const [showLogin, setShowLogin] = useState(false);
         >
           ENVIAR
         </button>
+        <div className="mt-4 text-sm text-center">
+        ¿Ya estás registrado?{" "}
+        <button
+          type="button"
+          onClick={() => setShowLogin(true)}
+          className="text-violet-600 font-semibold underline hover:text-violet-800"
+        >
+          Iniciá sesión
+        </button>
+      </div>
       </form>
     </div>
   );
