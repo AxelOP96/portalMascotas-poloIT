@@ -20,14 +20,13 @@ export default function LoginModal({ onClose }: { onClose: () => void }) {
     const data = await res.json();
     if (res.ok) {
       localStorage.setItem("token", data.token);
-      alert("¡Sesión iniciada correctamente!");
+      //alert("¡Sesión iniciada correctamente!");
       if (data.user.role === "postulante") {
         router.push("/postulante");
       } else {
         router.push("/ver-peluditos");
       }
       onClose();
-      location.reload(); // o usar router.push si querés redirigir
     } else {
       alert(data.error || "Error al iniciar sesión");
     }

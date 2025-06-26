@@ -80,13 +80,13 @@ export default function CargarMascota() {
   if (!isPostulante) return null;
 
   return (
-    <form onSubmit={handleSubmit} className="p-6 space-y-4 max-w-xl mx-auto">
+    <form onSubmit={handleSubmit} className="p-6 space-y-4 max-w-xl mx-auto postulation">
       <h1 className="text-2xl font-bold mb-4">Cargar nuevo peludito 🐶</h1>
       <input name="nombre" placeholder="Nombre" value={form.nombre} onChange={handleChange} required />
       <input name="edad" placeholder="Edad" value={form.edad} onChange={handleChange} required />
       <input name="barrio" placeholder="Barrio" value={form.barrio} onChange={handleChange} required />
       <input name="personalidad" placeholder="Personalidad" value={form.personalidad} onChange={handleChange} required />
-      <textarea name="descripcion" placeholder="Descripción" value={form.descripcion} onChange={handleChange} required />
+      
       <input name="imagen" placeholder="URL de imagen" value={form.imagen} onChange={handleChange} required />
       <input name="peso" placeholder="Peso" value={form.peso} onChange={handleChange} required />
       <input name="estatura" placeholder="Estatura" value={form.estatura} onChange={handleChange} required />
@@ -97,7 +97,7 @@ export default function CargarMascota() {
       </select>
       <input name="raza" placeholder="Raza" value={form.raza} onChange={handleChange} required />
       <input name="etapaDeVida" placeholder="Etapa de vida (Cachorro, Adulto, Senior)" value={form.etapaDeVida} onChange={handleChange} required />
-
+      <textarea name="descripcion" placeholder="Descripción" value={form.descripcion} onChange={handleChange} required />
       <button type="submit" className="bg-lime-500 hover:bg-lime-600 text-white px-4 py-2 rounded">
         Cargar Peludito
       </button>
