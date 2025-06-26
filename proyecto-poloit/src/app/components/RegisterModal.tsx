@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-export default function RegisterModal() {
+import LoginModal from "./LoginModal";
+export default function RegisterModal({ onClose }: { onClose: () => void }) {
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -11,7 +11,7 @@ export default function RegisterModal() {
     password: "",
     role: "adoptante",
   });
-
+const [showLogin, setShowLogin] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
 };
@@ -28,11 +28,12 @@ export default function RegisterModal() {
     const data = await res.json();
     if (res.ok) {
       alert("¡Registro exitoso!");
+      setShowLogin(true); 
     } else {
       alert(data.msg || "Error al registrarse");
     }
   };
-
+  if (showLogin) return <LoginModal onClose={onClose} />;
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <form
