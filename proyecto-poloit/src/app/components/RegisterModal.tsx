@@ -9,11 +9,12 @@ export default function RegisterModal() {
     telefono: "",
     email: "",
     password: "",
+    role: "adoptante",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +50,18 @@ export default function RegisterModal() {
           <Input name="telefono" label="Teléfono" value={formData.telefono} onChange={handleChange} />
           <Input name="email" label="E-Mail" value={formData.email} onChange={handleChange} />
           <Input name="password" label="Contraseña" value={formData.password} onChange={handleChange} type="password" />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm font-semibold">Tipo de usuario:</label>
+          <select
+            name="role"
+            value={formData.role || "adoptante"}
+            onChange={handleChange}
+            className="border-b border-gray-400 focus:outline-none focus:border-lime-400 py-1"
+          >
+            <option value="adoptante">Adoptante</option>
+            <option value="postulante">Postulante (puede cargar mascotas)</option>
+          </select>
         </div>
         <button
           type="submit"
