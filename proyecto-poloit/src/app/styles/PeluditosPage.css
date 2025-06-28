@@ -23,6 +23,7 @@
 .peludito-img {
     border-radius: 16px;
     object-fit: cover;
+    width: 100%;
 }
 
 .peludito-info {
@@ -67,7 +68,7 @@ h3 {
 }
 
 /* Desaparecer huellas en responsive */
-@media (max-width: 1171px) {
+@media (max-width: 1435px) {
 
     .huellas-left,
     .huellas-right {

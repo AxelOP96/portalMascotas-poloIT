@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import WelcomeSection from "./components/WelcomeSection";
 import AdoptionRequirements from "./components/AdoptionRequirements";
 
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans relative overflow-hidden pb-[100px]">
