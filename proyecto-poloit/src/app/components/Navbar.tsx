@@ -43,7 +43,7 @@ export default function Navbar() {
                     <button
                         className={styles.navLink}
                         onClick={() => setShowRegister(true)}
-                        >
+                    >
                         Registrarse
                     </button>
                 </nav>
@@ -53,7 +53,8 @@ export default function Navbar() {
                 </div>
             </header>
 
-            {showRegister && <RegisterModal />}
+            {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
+
         </>
     );
 }

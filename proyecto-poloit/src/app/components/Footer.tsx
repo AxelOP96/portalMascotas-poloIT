@@ -18,8 +18,8 @@ export default function Footer() {
         {/* Centro: navegación */}
         <div className={styles.navLinks}>
           <Link href="#inicio" className={styles.navLink}>Inicio</Link>
-          <Link href="#peluditos" className={styles.navLink}>Ver Peluditos</Link>
-          <Link href="#donaciones" className={styles.navLink}>Donar</Link>
+          <Link href="ver-peluditos" className={styles.navLink}>Ver Peluditos</Link>
+          <Link href="donaciones" className={styles.navLink}>Donar</Link>
         </div>
 
         {/* Derecha: contacto */}

@@ -2,13 +2,33 @@
     min-height: 100vh;
     background-color: white;
     font-family: 'Poppins', sans-serif;
-    padding: 8rem 12rem;
+    padding: 10rem 12rem;
+    position: relative;
+}
+
+/* Patitas decorativas */
+.huellas-left,
+.huellas-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.huellas-left {
+    left: 10px;
+}
+
+.huellas-right {
+    right: 10px;
+    transform: translateY(-50%) rotateY(180deg);
 }
 
 .detalle-card {
     background-color: white;
     border-radius: 24px;
-    box-shadow: 3px 5px 38.8px 0px #40C4AE !important;
+    box-shadow: 3px 5px 38.8px 0px #40C4AE;
     border: 1px solid #a7e4c4;
     padding: 3rem;
     position: relative;
@@ -117,4 +137,48 @@
 
 .boton-adoptar:hover {
     background-color: #5cab3e;
+}
+
+@media (max-width: 768px) {
+    .detalle-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .detalle-card {
+        padding: 1.5rem;
+    }
+
+    .detalle-img {
+        margin-top: 1rem;
+    }
+
+    .info-cajas {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .detalle-botones {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .detalle-botones button {
+        width: 100%;
+    }
+}
+
+.detalle-img img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 16px;
+}
+
+/* Desaparecer huellas en responsive */
+@media (max-width: 1435px) {
+
+    .huellas-left,
+    .huellas-right {
+        display: none;
+    }
 }
