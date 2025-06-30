@@ -1,0 +1,120 @@
+.detalle-container {
+    min-height: 100vh;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 8rem 12rem;
+}
+
+.detalle-card {
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 3px 5px 38.8px 0px #40C4AE !important;
+    border: 1px solid #a7e4c4;
+    padding: 3rem;
+    position: relative;
+}
+
+.detalle-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detalle-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.detalle-header p {
+    margin: 0;
+    color: #666;
+}
+
+.descripcion-texto {
+    color: #333;
+    margin-top: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.info-cajas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.info-caja {
+    border: 2px solid #a7e4c4;
+    border-radius: 16px;
+    padding: 1rem;
+    background: #fff;
+}
+
+.info-caja p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: black;
+}
+
+.info-caja .titulo {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.detalle-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.detalle-img img {
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detalle-extra {
+    margin-top: 0.5rem;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.detalle-botones {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.detalle-botones button {
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.boton-volver {
+    background-color: #ccf163;
+    color: #333;
+}
+
+.boton-volver:hover {
+    background-color: #b8db55;
+}
+
+.boton-adoptar {
+    background-color: #6cc24a;
+    color: white;
+}
+
+.boton-adoptar:hover {
+    background-color: #5cab3e;
+}

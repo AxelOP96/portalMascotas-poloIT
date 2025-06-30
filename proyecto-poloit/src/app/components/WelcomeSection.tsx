@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import styles from "../styles/WelcomeSection.module.css";
 
 export default function WelcomeSection() {
   return (
@@ -39,14 +40,17 @@ export default function WelcomeSection() {
       </p>
 
       {/* Perrito a la derecha */}
-      <div className="absolute bottom-0 right-[10%] hidden md:block">
-        <Image
-          src="/perro.png" 
-          alt="Perrito"
-          width={350}
-          height={180}
-        />
-      </div>
+
+<div className={`absolute bottom-0 right-[10%] ${styles.hideAt1328}`}>
+  <Image
+    src="/perro.png" 
+    alt="Perrito"
+    width={350}
+    height={180}
+  />
+</div>
+
+
     </section>
   );
 }

@@ -1,0 +1,5 @@
+@media (max-width: 1328px) {
+    .hideAt1328 {
+        display: none !important;
+    }
+}

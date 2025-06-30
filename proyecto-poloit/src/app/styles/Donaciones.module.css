@@ -1,5 +1,5 @@
 .container {
-    position: relative; 
+    position: relative;
     font-family: "Segoe UI", sans-serif;
     text-align: center;
     background-color: #fff;
@@ -25,8 +25,7 @@
     font-weight: bold;
 }
 
-.mediosPago {
-}
+.mediosPago {}
 
 .pagosImage {
     max-width: 100%;
@@ -44,5 +43,29 @@
 .huellasRight {
     position: absolute;
     bottom: 100px;
-    right: 70px;
+    right: 40px;
+}
+
+/* Desaparecer huellas para responsibe */
+@media (max-width: 1171px) {
+
+    .huellasLeft,
+    .huellasRight {
+        display: none;
+    }
+}
+
+
+/* Responsive Mobile */
+@media (max-width: 480px) {
+    .bannerImage {
+        margin-bottom: -142px;
+    }
+}
+
+/* Responsive Tablet */
+@media (min-width: 470px) and (max-width: 1024px) {
+    .bannerImage {
+        margin-bottom: -180px;
+    }
 }

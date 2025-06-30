@@ -5,12 +5,15 @@ import styles from "../styles/Navbar.module.css";
 import HeaderCurve from "./HeaderCurve";
 import { useEffect, useState } from "react";
 import RegisterModal from "./RegisterModal";
-//import PeluditosPage from "../peluditos/page";
 
 export default function Navbar() {
     const [showRegister, setShowRegister] = useState(false);
     const [user, setUser] = useState<{ nombre: string; role: string } | null>(null);
+    const [menuAbierto, setMenuAbierto] = useState(false);
 
+    const toggleMenu = () => {
+        setMenuAbierto(!menuAbierto);
+    };
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return;
@@ -28,6 +31,7 @@ export default function Navbar() {
             setUser(null);
             window.location.href = "/"; 
             };
+    
     return (
         <>
         
@@ -42,7 +46,13 @@ export default function Navbar() {
                     />
                 </Link>
 
-                <nav className={styles.nav}>
+                <button className={styles.burger} onClick={toggleMenu}>
+                    ☰
+                </button>
+
+                <nav
+                    className={`${styles.nav} ${menuAbierto ? styles.showMenu : ""}`}
+                >
                     <Link href="/ver-peluditos" className={styles.navLink}>
                         Ver Peluditos
                     </Link>
@@ -71,7 +81,6 @@ export default function Navbar() {
                         )}
                 </nav>
 
-                {/* Curva de olas */}
                 <div className={styles.waveWrapper}>
                     <HeaderCurve />
                 </div>
