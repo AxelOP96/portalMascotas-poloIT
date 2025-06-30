@@ -28,11 +28,15 @@ body {
   clip-path: ellipse(100% 100% at 50% 80%);
 }
 .postulation{
-  padding: 6rem 2rem;
-  margin-top: 3rem;
+  padding: 6rem 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   & input{
     border-bottom: 1px solid black;
-    margin: 1px;
+    margin: 2px;
+    padding: .2rem;
   }
 }

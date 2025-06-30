@@ -5,12 +5,13 @@ import styles from "../styles/Navbar.module.css";
 import HeaderCurve from "./HeaderCurve";
 import { useEffect, useState } from "react";
 import RegisterModal from "./RegisterModal";
+import LoginModal from "./LoginModal";
 
 export default function Navbar() {
     const [showRegister, setShowRegister] = useState(false);
     const [user, setUser] = useState<{ nombre: string; role: string } | null>(null);
     const [menuAbierto, setMenuAbierto] = useState(false);
-
+    const [showLogin, setShowLogin] = useState(false);
     const toggleMenu = () => {
         setMenuAbierto(!menuAbierto);
     };
@@ -85,7 +86,17 @@ export default function Navbar() {
                     <HeaderCurve />
                 </div>
             </header>
-            {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
+            {showRegister && (
+                <RegisterModal
+                    onClose={() => setShowRegister(false)}
+                    onShowLogin={() => setShowLogin(true)}
+                />
+                )}
+                {showLogin && (
+                <LoginModal
+                    onClose={() => setShowLogin(false)}
+                />
+                )}
         </>
     );
 }
