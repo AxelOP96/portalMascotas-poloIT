@@ -36,9 +36,13 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
       alert(data.msg || "Error al registrarse");
     }
   };
+<<<<<<< HEAD
 
   if (showLogin) return <LoginModal onClose={onClose} />;
 
+=======
+  if (showLogin) return <LoginModal onClose={() => setShowLogin(false)} />;
+>>>>>>> e955bacb607a74615d7a10e1680056cb0582ea9e
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <form
@@ -87,6 +91,16 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
         >
           ENVIAR
         </button>
+        <div className="mt-4 text-sm text-center">
+        ¿Ya estás registrado?{" "}
+        <button
+          type="button"
+          onClick={() => setShowLogin(true)}
+          className="text-violet-600 font-semibold underline hover:text-violet-800"
+        >
+          Iniciá sesión
+        </button>
+      </div>
       </form>
     </div>
   );

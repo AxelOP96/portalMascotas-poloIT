@@ -3,19 +3,38 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
 import HeaderCurve from "./HeaderCurve";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RegisterModal from "./RegisterModal";
 
 export default function Navbar() {
     const [showRegister, setShowRegister] = useState(false);
+    const [user, setUser] = useState<{ nombre: string; role: string } | null>(null);
     const [menuAbierto, setMenuAbierto] = useState(false);
 
     const toggleMenu = () => {
         setMenuAbierto(!menuAbierto);
     };
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) return;
 
+        fetch("http://localhost:5000/api/auth/me", {
+            headers: { Authorization: `Bearer ${token}` },
+        })
+            .then((res) => res.json())
+            .then(setUser)
+            .catch(() => setUser(null));
+        }, []);
+
+        const handleLogout = () => {
+            localStorage.removeItem("token");
+            setUser(null);
+            window.location.href = "/"; 
+            };
+    
     return (
         <>
+        
             <header className={styles.header}>
                 <Link href="/">
                     <Image
@@ -37,24 +56,51 @@ export default function Navbar() {
                     <Link href="/ver-peluditos" className={styles.navLink}>
                         Ver Peluditos
                     </Link>
+                    {user?.role === "postulante" && (
+                    <Link href="/postulante" className={styles.navLink}>
+                        Panel de Postulante
+                    </Link>
+                    )}
                     <Link href="/donaciones" className={styles.navLink}>
                         Donaciones
                     </Link>
+<<<<<<< HEAD
                     <button
                         className={styles.navLink}
                         onClick={() => setShowRegister(true)}
                     >
                         Registrarse
                     </button>
+=======
+                    {user ? (
+                        <div className={styles.navLink}>
+                            {user.nombre} ({user.role}) |{" "}
+                            <button onClick={handleLogout} className="underline text-red-600">
+                            Cerrar sesión
+                            </button>
+                        </div>
+                        ) : (
+                        <button
+                            className={styles.navLink}
+                            onClick={() => setShowRegister(true)}
+                        >
+                            Registrarse
+                        </button>
+                        )}
+>>>>>>> e955bacb607a74615d7a10e1680056cb0582ea9e
                 </nav>
 
                 <div className={styles.waveWrapper}>
                     <HeaderCurve />
                 </div>
             </header>
+<<<<<<< HEAD
 
             {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
 
+=======
+            {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
+>>>>>>> e955bacb607a74615d7a10e1680056cb0582ea9e
         </>
     );
 }

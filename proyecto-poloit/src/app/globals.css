@@ -27,3 +27,12 @@ body {
 .clip-path-custom {
   clip-path: ellipse(100% 100% at 50% 80%);
 }
+.postulation{
+  padding: 6rem 2rem;
+  margin-top: 3rem;
+
+  & input{
+    border-bottom: 1px solid black;
+    margin: 1px;
+  }
+}
