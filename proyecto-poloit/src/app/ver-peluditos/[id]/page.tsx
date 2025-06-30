@@ -66,7 +66,7 @@ export default async function DetallePeludito({ params }: { params: { id: string
         </div>
 
         <div className="detalle-img">
-          <Image
+          <img
             src={peludito.imagen}
             alt={peludito.nombre}
             width={400}

@@ -58,7 +58,7 @@ export default function CargarMascota() {
     e.preventDefault();
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/peluditos/mis-peluditos", { //api/auth/mis-peluditos
+    const res = await fetch("http://localhost:5000/peluditos/", { //api/auth/mis-peluditos
       method: "POST",
       headers: {
         "Content-Type": "application/json",

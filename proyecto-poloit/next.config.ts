@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "stock.adobe.com",
       },
+      {
+        protocol: "https",
+        hostname: "as1.ftcdn.net",
+      },
     ],
   },
 };

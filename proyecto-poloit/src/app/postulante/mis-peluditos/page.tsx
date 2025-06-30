@@ -46,7 +46,7 @@ export default function MisPeluditos() {
               if (Array.isArray(data)) {
                 setPeluditos(data);
               } else {
-                throw new Error("Respuesta inválida del servidor");
+                //throw new Error("Respuesta inválida del servidor");
               }
             });
         }
@@ -56,7 +56,6 @@ export default function MisPeluditos() {
       })
       .finally(() => {
         setLoading(false);
-        // Mostrar agradecimiento por 10 segundos
         setShowThanks(true);
         setTimeout(() => {
           setShowThanks(false);
