@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import LoginModal from "./LoginModal";
-export default function RegisterModal({ onClose }: { onClose: () => void }) {
+export default function RegisterModal({ onClose ,
+  onShowLogin,}: { onClose: () => void; onShowLogin: () => void; }) {
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -27,10 +28,12 @@ const [showLogin, setShowLogin] = useState(false);
 
     const data = await res.json();
     if (res.ok) {
-      alert("¡Registro exitoso!");
-      setShowLogin(true); 
+      //alert("¡Registro exitoso!");
+      onClose();
+      onShowLogin();
+      //setShowLogin(true); 
     } else {
-      alert(data.msg || "Error al registrarse");
+      //alert(data.msg || "Error al registrarse");
     }
   };
   if (showLogin) return <LoginModal onClose={() => setShowLogin(false)} />;
@@ -40,6 +43,13 @@ const [showLogin, setShowLogin] = useState(false);
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-3xl shadow-xl text-left relative w-[90%] max-w-md"
       >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-500 hover:text-black text-xl"
+        >
+          ×
+        </button>
         <img
           src="/imgregistro.png"
           alt="Mascotas"
@@ -74,7 +84,10 @@ const [showLogin, setShowLogin] = useState(false);
         ¿Ya estás registrado?{" "}
         <button
           type="button"
-          onClick={() => setShowLogin(true)}
+          onClick={() => {
+              onClose();
+              onShowLogin();
+            }}
           className="text-violet-600 font-semibold underline hover:text-violet-800"
         >
           Iniciá sesión

@@ -84,7 +84,7 @@ export default function PeluditosPage() {
             <div className="peluditos-container">
                 {peluditos.map((p) => (
                     <div key={p._id} className="peludito-card">
-                        <Image src={p.imagen} alt={p.nombre} width={300} height={200} className="peludito-img" />
+                        <img src={p.imagen} alt={p.nombre} width={300} height={200} className="peludito-img" />
                         <h3>{p.nombre}</h3>
                         <div className="peludito-info">
                             <span>📅 {p.edad}</span>

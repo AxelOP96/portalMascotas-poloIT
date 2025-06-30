@@ -37,14 +37,14 @@ export default function CargarMascota() {
       .then((res) => res.json())
       .then((data) => {
         if (data.role !== "postulante") {
-          alert("Solo los usuarios postulantes pueden cargar mascotas.");
+          //alert("Solo los usuarios postulantes pueden cargar mascotas.");
           router.push("/");
         } else {
           setIsPostulante(true);
         }
       })
       .catch(() => {
-        alert("Sesión inválida. Iniciá sesión nuevamente.");
+        //alert("Sesión inválida. Iniciá sesión nuevamente.");
         router.push("/");
       })
       .finally(() => setLoading(false));
@@ -58,7 +58,7 @@ export default function CargarMascota() {
     e.preventDefault();
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/api/auth/mis-peluditos", {
+    const res = await fetch("http://localhost:5000/peluditos/mis-peluditos", { //api/auth/mis-peluditos
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,10 +69,10 @@ export default function CargarMascota() {
 
     const data = await res.json();
     if (res.ok) {
-      alert("¡Peludito cargado con éxito!");
-      router.push("/");
+      //alert("¡Peludito cargado con éxito!");
+      router.push("/postulante/mis-peluditos");
     } else {
-      alert(data.msg || "Error al cargar el peludito.");
+      //alert(data.msg || "Error al cargar el peludito.");
     }
   };
 
